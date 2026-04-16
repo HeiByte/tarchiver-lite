@@ -1,0 +1,120 @@
+/* Reset CSS */
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  list-style: none;
+  text-decoration: none;
+}
+
+body {
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+/* Style navbar */
+nav {
+  position: fixed;
+  background-color: rgb(187, 213, 239);
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 1.5rem;
+  box-shadow: 3px 3px 8px 0px rgba(187, 213, 239, 0.3);
+}
+
+nav .logo img{
+  height: 50px;
+  width: auto;
+}
+
+/* Style navbar desktop */
+nav ul.desktop-menu {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+/* Style list menu */
+nav ul li a {
+  color: #011737;
+}
+nav ul li a:hover {
+  color: #7777eb;
+}
+
+nav ul li button{
+  padding: 8px 10px;
+  border: none;
+  border-radius: 10px;
+  color: #bbd5ef;
+  background-color: #011737;
+  transition: all 0.2s ease-in-out;
+}
+
+nav ul li button:hover{
+  color: #bbd5ef;
+  background-color: #7777eb;
+}
+
+/* Style hamburger-menu */
+.hamburger-menu {
+  width: 30px;
+  height: 20px;
+  display: none;
+  flex-direction: column;
+  justify-content: space-between;
+  cursor: pointer;
+}
+
+.hamburger-menu .bar {
+  height: 3px;
+  width: 100%;
+  background-color: #f2fe00;
+  transition: all 0.3s ease-in-out;
+}
+
+.hamburger-menu.is-active .bar:nth-child(1) {
+  transform: translateY(9px) rotate(45deg);
+}
+.hamburger-menu.is-active .bar:nth-child(2) {
+  opacity: 0;
+}
+.hamburger-menu.is-active .bar:nth-child(3) {
+  transform: translateY(-9px) rotate(-45deg);
+}
+
+/* Style navbar mobile */
+nav ul.mobile-menu {
+  position: absolute;
+  display: none;
+  flex-direction: column;
+  gap: 20px;
+  top: 0;
+  left: 0;
+  height: 100vh;
+  padding: 1.5rem;
+  width: 300px;
+  background-color: #bbd5ef;
+}
+
+nav ul.mobile-menu.is-open {
+  display: flex;
+}
+
+/* Ukuran Tablet */
+@media (max-width: 767px) {
+  nav ul.desktop-menu li {
+    display: none;
+  }
+  .hamburger-menu {
+    display: flex;
+  }
+}
+
+/* Ukuran Handphone */
+@media (max-width: 480px) {
+  nav ul.mobile-menu {
+    width: 100%;
+  }
+}
