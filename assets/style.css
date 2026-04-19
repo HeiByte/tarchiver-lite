@@ -33,13 +33,13 @@ nav {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 0 1.5rem;
+  padding: 1rem 1.5rem;
   box-shadow: 3px 3px 8px 0px rgba(187, 213, 239, 0.3);
   z-index: 1000;
 }
 
 nav .logo img {
-  height: 50px;
+  height: 35px;
   width: auto;
 }
 
@@ -278,6 +278,18 @@ section#philosophy {
   display: flex;
   flex-direction: column;
   align-items: center;
+  border: 2px solid var(--primary-color);
+  border-radius: 20px;
+  transition: 
+    transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275), 
+    border-color 0.3s ease,
+    box-shadow 0.3s ease;
+}
+
+.feature-card:hover{
+  border-color: var(--secondary-color);
+  transform: scale(1.05) translateY(-5px); 
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
 }
 
 .icon-placeholder {
@@ -327,9 +339,7 @@ section#philosophy {
   color: var(--primary-color);
 }
 
-/* section#philosophy{
-  background-color: rgb(236, 235, 235);
-} */
+
 .philosophy-card p {
   font-size: 0.95rem;
   line-height: 1.5;
@@ -337,9 +347,7 @@ section#philosophy {
   color: #393939;
 }
 
-.closing-philosophy{
-  padding: 20px;
-  margin-bottom: 10px;
+
 }
 
 .closing-philosophy p {
@@ -353,56 +361,190 @@ nav ul.mobile-menu.is-open {
   display: flex;
 }
 
-/* How It Works Style */
-
+/* Style How It Works */
 section#hiw {
   display: flex;
   flex-direction: column;
-  justify-content: center;
   align-items: center;
   width: 100%;
   min-height: 100vh;
-  background-color:rgba(238, 247, 253, 0.61);
+  padding: 80px 20px;
+  background-color: rgba(238, 247, 253, 0.61);
   border-radius: 3rem;
-}
-.container-hiw {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-  gap: 25px;
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 20px;
+  box-sizing: border-box;
 }
 
+.title {
+  font-size: 2.5rem;
+  margin-bottom: 50px;
+  color: var(--primary-color);
+  text-align: center;
+}
+
+.container-hiw {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 25px;
+  max-width: 1200px;
+  width: 100%;
+  margin: 0 auto;
+}
+
+/* Card Style */
 .card-hiw {
   display: flex;
   flex-direction: column;
-  padding: 20px;
-  border-radius: 12px;
+  flex: 1 1 300px;
+  max-width: 350px;
+  padding: 24px;
+  border-radius: 16px;
   box-shadow: 3px 10px 8px 0px rgba(187, 213, 239, 0.3);
-  border: 1px solid transparent; 
-  transition: transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275), 
-              border 0.3s ease;
-  backface-visibility: hidden;
+  color: var(--primary-color);
+  background-color: var(--background-color, #ffffff);
+  border: 1px solid transparent;
+  transition:
+    transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275),
+    border 0.3s ease;
 }
 
-.card-hiw:hover{
-transform: scale(1.05); 
+.card-hiw:hover {
+  transform: translateY(-10px);
   border: 1px solid var(--primary-color);
-  box-shadow: 0 10px 20px rgba(0,0,0,0.1);
 }
 
 .img-hiw {
   width: 100%;
-  height: 200px;
+  aspect-ratio: 16 / 9;
   object-fit: cover;
   border-radius: 8px;
   margin: 15px 0;
-  background-color: var(--hover-color);
+  background-color: var(--background-color);
 }
 
-@media (max-width: 480px) {
+.title-card {
+  font-size: 1.2rem;
+  margin-bottom: 10px;
 }
+
+/* Style Footer */
+footer {
+  border-radius: 2rem 2rem 0 0;
+  background-color: var(--primary-color);
+  padding: 40px 0 20px 0;
+  border-top: 1px solid var(--secondary-color);
+  font-family: sans-serif;
+}
+
+.container-footer {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 5%;
+  display: flex;
+  justify-content: space-between;
+  gap: 40px;
+}
+
+.footer-brand {
+  flex: 2;
+  max-width: 300px;
+}
+
+
+.footer-brand .logo img {
+  width: auto;
+  height: 40px;
+  margin-bottom: 15px;
+  background-color: #eee;
+  border-radius: 10px;
+}
+
+.footer-description {
+  font-size: 0.9rem;
+  color: var(--background-color);
+  line-height: 1.6;
+}
+
+footer h4 {
+  font-size: 1.1rem;
+  margin-bottom: 20px;
+  color: var(--background-color);
+}
+
+.footer-nav {
+  flex: 1;
+}
+
+.footer-nav ul {
+  list-style: none;
+  padding: 0;
+}
+
+.footer-nav ul li {
+  margin-bottom: 10px;
+}
+
+.footer-nav ul li a {
+  color: var(--background-color);
+  position: relative;
+}
+
+.footer-nav ul li a::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 0;
+  height: 2px;
+  background-color: var(--secondary-color);
+  transition: width 0.5s ease;
+}
+
+.footer-nav ul li a:hover {
+  color: var(--hover-color);
+}
+
+.footer-nav ul li a:hover::after {
+  width: 100%;
+}
+
+.footer-info {
+  flex: 1;
+}
+
+.footer-info p {
+  font-size: 0.9rem;
+  color: var(--background-color);
+  margin-bottom: 10px;
+}
+
+.footer-social a {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  text-decoration: none;
+  color: var(--background-color);
+  font-weight: 500;
+  margin-top: 10px;
+}
+
+.footer-social img {
+  width: 20px;
+  height: 20px;
+}
+
+.footer-bottom {
+  text-align: center;
+  margin-top: 50px;
+  padding-top: 20px;
+  border-top: 1px solid #eee;
+}
+
+.footer-bottom p {
+  font-size: 0.8rem;
+  color: #999;
+}
+
 /* Ukuran Tablet */
 @media (max-width: 767px) {
   nav ul.desktop-menu li {
@@ -412,13 +554,40 @@ transform: scale(1.05);
     display: flex;
   }
 
-  .container-hiw {
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    gap: 20px;
+  section#hiw {
+    padding: 60px 20px;
+    border-radius: 2rem;
+  }
+
+  .card-hiw {
+    flex: 1 1 45%;
+  }
+
+  .closing-philosophy {
+    padding: 0 0 30px 0;
+  }
+  footer {
+    padding: 60px 0 0 0;
+  }
+  .container-footer {
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    gap: 40px 20px;
+  }
+
+  .footer-brand {
+    flex: 0 0 100%;
+    max-width: 100%;
+    margin-bottom: 10px;
+  }
+
+  .footer-nav,
+  .footer-info {
+    flex: 1;
+    min-width: 200px;
   }
 }
 
-/* Ukuran Handphone */
 @media (max-width: 480px) {
   nav ul.mobile-menu {
     width: 100%;
@@ -454,6 +623,54 @@ transform: scale(1.05);
 
   .title {
     font-size: 1.8rem;
+  }
+
+  section#hiw {
+    padding: 40px 15px;
+    border-radius: 1.5rem;
+  }
+
+  .title {
+    font-size: 1.8rem;
+  }
+
+  .container-hiw {
+    gap: 15px;
+  }
+
+  .card-hiw {
+    flex: 1 1 100%;
+    max-width: 100%;
+  }
+
+  .closing-philosophy {
+    padding: 0 0 30px 0;
+  }
+
+  footer {
+    padding: 40px 0 20px 0;
+    text-align: center;
+  }
+
+  .container-footer {
+    flex-direction: column;
+    align-items: center;
+    gap: 35px;
+  }
+
+  .footer-brand,
+  .footer-nav,
+  .footer-info {
+    flex: 1;
+    max-width: 100%;
+  }
+
+  .footer-social a {
+    justify-content: center;
+  }
+
+  .footer-bottom {
+    margin-top: 30px;
   }
 }
 
