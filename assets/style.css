@@ -189,8 +189,57 @@ section#philosophy {
   justify-content: center;
   margin-bottom: 65px;
 }
+/* --- SECTION: FEATURES GRID --- */
+.container {
+    padding: 60px 5%;
+}
 
-.cta button {
+.features-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 25px;
+}
+
+.card {
+    background: white;
+    padding: 30px;
+    border-radius: 12px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+    transition: transform 0.3s ease;
+    text-align: left;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+}
+
+.card .icon {
+    font-size: 2rem;
+    color: #007bff;
+    margin-bottom: 15px;
+}
+
+.card h3 {
+    margin-bottom: 10px;
+    font-size: 1.4rem;
+}
+
+.card p {
+    color: #666;
+    font-size: 0.95rem;
+}
+
+.card .example {
+    display: inline-block;
+    margin-top: 15px;
+    padding: 4px 8px;
+    background: #eef2f7;
+    border-radius: 4px;
+    font-family: monospace;
+    font-size: 0.85rem;
+    color: #444;
+}
+.cta button{
   padding: 12px 24px;
   cursor: pointer;
   font-weight: 600;
@@ -278,13 +327,19 @@ section#philosophy {
   align-items: center;
 }
 
+.icon{
+  font-size: 40px;
+  margin-bottom: 20px;
+  border-radius: 8px;
+}
+
 .philosophy-card h3 {
   margin-bottom: 10px;
   font-size: 1.25rem;
   color: var(--primary-color);
 }
 
-/* section#philosophy */
+
 .philosophy-card p {
   font-size: 0.95rem;
   line-height: 1.5;
@@ -292,12 +347,12 @@ section#philosophy {
   color: #393939;
 }
 
-.closing-philosophy {
-  padding: 30px;
+
 }
 
 .closing-philosophy p {
   font-size: 1.1rem;
+  font-weight: bold;
   font-style: italic;
   color: var(--hover-color);
 }
@@ -618,3 +673,5 @@ footer h4 {
     margin-top: 30px;
   }
 }
+
+
