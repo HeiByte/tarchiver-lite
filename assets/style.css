@@ -33,13 +33,13 @@ nav {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 0 1.5rem;
+  padding: 1rem 1.5rem;
   box-shadow: 3px 3px 8px 0px rgba(187, 213, 239, 0.3);
   z-index: 1000;
 }
 
 nav .logo img {
-  height: 50px;
+  height: 35px;
   width: auto;
 }
 
@@ -364,7 +364,7 @@ section#hiw {
   object-fit: cover;
   border-radius: 8px;
   margin: 15px 0;
-  background-color: var(--hover-color, #e0eafc);
+  background-color: var(--background-color);
 }
 
 .title-card {
@@ -395,9 +395,13 @@ footer {
   max-width: 300px;
 }
 
+
 .footer-brand .logo img {
+  width: auto;
   height: 40px;
   margin-bottom: 15px;
+  background-color: #eee;
+  border-radius: 10px;
 }
 
 .footer-description {
