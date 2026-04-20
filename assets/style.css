@@ -575,6 +575,10 @@ footer h4 {
     margin-top: 30px;
   }
 
+  section#features{
+    padding: 3rem 10px;
+  }
+
   section#hiw {
     padding: 60px 20px;
     border-radius: 2rem;
